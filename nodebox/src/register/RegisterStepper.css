@@ -23,6 +23,7 @@
   align-items: center;
   justify-content: center;
   color: black;
+  opacity: 0.6;
 }
 .step-label.active {
   font-weight: bold;
@@ -30,6 +31,7 @@
 .step-circle.active {
   background-color: blue;
   color: white;
+  opacity: 1;
 }
 .stepper-container {
   display: flex;

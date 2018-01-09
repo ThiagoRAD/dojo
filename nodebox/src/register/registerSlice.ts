@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Step } from './Step';
+import { RootState } from '../store'
 
+type Step = 'Account' | 'Address' | 'Payment';
 interface RegisterState {
   username: string;
   password: string;
@@ -11,8 +12,8 @@ interface RegisterState {
 const initialState: RegisterState = {
   username: '',
   password: '',
-  currentStep: Step.Account,
-  steps: [Step.Account, Step.Address, Step.Payment],
+  currentStep: 'Account',
+  steps: ['Account', 'Address', 'Payment'],
 };
 
 
@@ -42,4 +43,8 @@ const registerSlice = createSlice({
 });
 
 export const { setUsername, setPassword, nextStep, prevStep } = registerSlice.actions;
+
+export const selectRegisterState = (state: RootState) => state.register;
+
+
 export default registerSlice.reducer;
