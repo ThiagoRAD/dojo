@@ -1,3 +1,4 @@
+import {Fragment} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {RootState} from '../store';
 import {Step} from './Step';
@@ -23,26 +24,27 @@ const RegisterStepper = () => {
 
   return (
     <div className='stepper-container'>
-      <div>
-        <div className='stepper-navigation'>
-          {steps.map((step, index) => (
-            <div key={step} className='step'>
-              <div className={`step-circle ${step === currentStep && 'active'}`}>{index+1}</div>
-              <div className={`step-label ${step === currentStep && 'active'}`}>{step}</div>
+      <div className='stepper-navigation'>
+        {steps.map((step, index) => (
+          <Fragment key={step}>
+            {index !== 0 && <div className={`step-bar ${step <= currentStep && 'active'}`}></div>}
+            <div className={`step-circle ${step <= currentStep && 'active'}`}>
+              <span>{index + 1}</span>
+              <span className={`step-label ${step === currentStep && 'active'}`}>{step}</span>
             </div>
-          ))}
-        </div>
-        {currentStep === Step.Account && <RegisterAccount />}
-        {currentStep === Step.Address && <RegisterAddress />}
-        {currentStep === Step.Payment && <RegisterPayment />}
-        <div className='navigation'>
-          <button disabled={isFirstStep} onClick={handleBack}>
-            Back
-          </button>
-          <button disabled={isLastStep} onClick={handleNext}>
-            Next
-          </button>
-        </div>
+          </Fragment>
+        ))}
+      </div>
+      {currentStep === Step.Account && <RegisterAccount />}
+      {currentStep === Step.Address && <RegisterAddress />}
+      {currentStep === Step.Payment && <RegisterPayment />}
+      <div className='navigation'>
+        <button disabled={isFirstStep} onClick={handleBack}>
+          Back
+        </button>
+        <button disabled={isLastStep} onClick={handleNext}>
+          Next
+        </button>
       </div>
     </div>
   );
