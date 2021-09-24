@@ -1,6 +1,6 @@
 
-const StepConta = () => {
+const RegisterAddress = () => {
   return <div>Step Container</div>
 }
 
-export default StepConta;
+export default RegisterAddress;

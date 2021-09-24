@@ -41,5 +41,5 @@ const registerSlice = createSlice({
   },
 });
 
-export const { setUsername, setPassword } = registerSlice.actions;
+export const { setUsername, setPassword, nextStep, prevStep } = registerSlice.actions;
 export default registerSlice.reducer;

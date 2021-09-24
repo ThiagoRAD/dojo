@@ -1,4 +1,4 @@
-const StepAccount = () => {
+const RegisterAccount = () => {
   return (
     <div>
       <div>
@@ -13,4 +13,4 @@ const StepAccount = () => {
   );
 };
 
-export default StepAccount;
+export default RegisterAccount;

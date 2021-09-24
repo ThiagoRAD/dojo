@@ -1,6 +1,6 @@
 
-const StepConta = () => {
+const RegisterPayment = () => {
   return <div>Step Container</div>
 }
 
-export default StepConta;
+export default RegisterPayment;
