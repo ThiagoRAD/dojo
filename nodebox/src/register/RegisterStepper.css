@@ -1,0 +1,40 @@
+.stepper-navigation {
+  display: flex;
+  justify-content: space-between;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.step-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: lightgray;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+.step-label.active {
+  font-weight: bold;
+}
+.step-circle.active {
+  background-color: blue;
+  color: white;
+}
+.stepper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  max-width: 400px;
+}
